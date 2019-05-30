@@ -124,7 +124,7 @@ private:
 		std::string check = msg_in.data();
 		if (debug == 1) std::cout<<"[" << boost::this_thread::get_id() << "]: Number of received chars "<< check.length()<<std::endl;
 		check = check.substr(0,3);
-
+		last_msg_check = msg_in.data();
 		//usefull for checks
 		//	std::cout<<"	sub string: "<<check<<std::endl;
 
@@ -159,7 +159,6 @@ private:
 			std::cout<<"[" << boost::this_thread::get_id() << "]: EXCHANGE FINISHED SUCESSFULLY !!!!!!!!!!!!!!!!!!"<<std::endl;
 			handle_close();
 		}
-		last_msg_check = check;
 	}
 
 	void handle_close(){
